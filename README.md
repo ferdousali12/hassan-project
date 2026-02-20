@@ -1,16 +1,24 @@
-# React + Vite
+App is a high-performance, single-page application (SPA) built with React and Vite. It features a modern, professional UI with smooth animations and a responsive design tailored for a seamless user experience across all devices.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 Live Demo
+Experience the live site here: https://spiffy-treacle-c73165.netlify.app/
 
-Currently, two official plugins are available:
+✨ Key Features
+Modern UI/UX: Clean, dark-themed aesthetic with a focus on readability and professional design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Animated Sections: Smooth scroll reveals and transition effects using CSS animations.
 
-## React Compiler
+Multi-View Navigation: Fully functional routing for Home, Services, Projects, About, and Contact sections.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Fully Responsive: Optimized for desktops, tablets, and mobile smartphones.
 
-## Expanding the ESLint configuration
+Optimized Performance: Blazing fast load times thanks to the Vite build tool.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🛠️ Tech Stack
+Frontend: React.js
+
+Build Tool: Vite (for rapid development and optimized bundling)
+
+Styling: Pure CSS / Modern CSS Variables
+
+Deployment: Netlify
