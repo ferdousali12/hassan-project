@@ -1,0 +1,351 @@
+/* ============================================
+  PROJECTS PAGE STYLES
+  ============================================ */
+
+/* Projects Hero */
+.projects-hero {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--bg-secondary) 0%,
+    var(--bg-primary) 100%
+  );
+  border-bottom: 2px solid var(--primary-color);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.projects-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.projects-hero p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 6rem 0;
+  background: #050a18; /* deep navy/black background for the whole section */
+}
+
+/* Centered Rock Paper Scissors container */
+.project-single {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: block;
+}
+
+.project-single .card-title {
+  font-size: 3.2rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 0.6rem 0;
+  display: block;
+}
+
+.project-single .card-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin: 10px auto 0;
+  background: linear-gradient(90deg, #007bff 0%, #00d4ff 100%);
+  border-radius: 4px;
+}
+
+.project-single-description {
+  color: #c8d3e6;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-top: 1.5rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.project-single-link {
+  margin-top: 1rem;
+  text-align: left;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-single-link a {
+  color: #00aef0;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ===== Rock Paper Scissors Grid ===== */
+.rps-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem 1rem;
+  align-items: start;
+}
+
+.rps-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 174, 240, 0.06);
+  padding: 2rem;
+  border-radius: 12px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rps-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.rps-underline {
+  width: 56px;
+  height: 4px;
+  margin: 8px auto 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #007bff 0%, #00d4ff 100%);
+}
+
+.rps-text {
+  color: #c8d3e6;
+  line-height: 1.7;
+  margin-top: 1rem;
+  font-size: 0.98rem;
+}
+
+.rps-link {
+  color: #00aef0;
+  font-weight: 600;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .rps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .rps-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .rps-card {
+    min-height: auto;
+  }
+}
+
+/* Project Card */
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-category {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--bg-primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.project-card .card-title {
+  flex: 0;
+}
+
+.project-card .card-description {
+  flex: 1;
+}
+
+.project-card .card-button {
+  flex: 0;
+  margin-top: 1rem;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: linear-gradient(
+    135deg,
+    var(--bg-secondary) 0%,
+    var(--bg-tertiary) 100%
+  );
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 2rem;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  color: var(--primary-color);
+}
+
+.modal-category {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--bg-primary);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.modal-content h2 {
+  color: var(--text-primary);
+  margin: 1rem 0;
+  margin-top: 1rem;
+}
+
+.modal-content h4 {
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.modal-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 1.5rem 0;
+}
+
+.modal-footer {
+  margin-top: 2rem;
+  text-align: right;
+}
+
+/* ============================================
+   RESPONSIVE PROJECTS PAGE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .projects-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-hero {
+    min-height: 250px;
+    padding: 2rem 0;
+  }
+
+  .projects-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .projects-hero p {
+    font-size: 1rem;
+  }
+
+  .modal-overlay {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-height: 90vh;
+  }
+
+  .modal-close {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}

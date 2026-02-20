@@ -1,0 +1,133 @@
+import './Navbar.css';
+
+/* ============================================
+   NAVBAR STYLES - Main navigation component
+   ============================================ */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-tertiary);
+  border-bottom: 2px solid var(--primary-color);
+  padding: 1.5rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styling */
+.navbar-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  transition: var(--transition);
+}
+
+.navbar-logo:hover {
+  text-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+}
+
+/* Navigation menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+
+.nav-menu li a {
+  color: var(--text-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.nav-menu li a:hover {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* Hamburger menu (hidden by default) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* ============================================
+   RESPONSIVE NAVIGATION
+   ============================================ */
+
+/* Tablets and below - show hamburger menu */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--bg-tertiary);
+    border-bottom: 2px solid var(--primary-color);
+    padding: 2rem 0;
+    width: 100%;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu li a {
+    display: block;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    border: none;
+  }
+
+  .nav-menu li a:hover {
+    background-color: var(--bg-secondary);
+    border: none;
+  }
+}
+
+/* Mobile - further adjustments */
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1.4rem;
+  }
+
+  .navbar {
+    padding: 1rem 0;
+  }
+}
